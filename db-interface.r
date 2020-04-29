@@ -10,8 +10,8 @@ theme_set(theme(text = element_text(family = "Roboto Condensed", size = getOptio
 
 dark2_colors = sample(palette(value = "Dark 2"), size = 2L) # R-4.0.0 color palette's so beautiful
 
-conn = DBI::dbConnect(drv = RSQLite::SQLite(), "nfl.sqlite") # connecting to database
-nfl = tbl(conn, "nfl_2000_2019")                             # make a reference to table `nfl_2000_2019`
+conn = DBI::dbConnect(drv = RSQLite::SQLite(), here("data", "nfl.sqlite")) # connecting to database
+nfl = tbl(conn, "nfl_2000_2019") # make a reference to table `nfl_2000_2019`
 
 
 ## aggregate data without 'collect' result (View?)
